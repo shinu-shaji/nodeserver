@@ -10,9 +10,9 @@ const server = http.createServer((req,res)=>{
 		//req.on("end",()=>{console.log(JSON.parse(jsonString));});
 		req.on("data",(data)=>{
 					var jsonData = JSON.parse(data);
-					var intendData = JSON.parse(jsonData[intent]);
+					var intendData = JSON.parse(jsonData["intent"]["query"]);
 					//console.log()
-					console.log(jsonData["query"]);
+					console.log(intendData);
 					//http.connect("http://184.144.70.115:8082/?"+jsonData["intent"]);
 					});
 		
