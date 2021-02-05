@@ -5,10 +5,12 @@ const fs =   require("fs");
 
 
 const server = http.createServer((req,res)=>{
-		var jsonString=null;
-		req.on("data",(data)=>{jsonString+=data;});
-		req.on("end",()=>{console.log(JSON.parse(jsonString));});
-		
+		var jsonString;
+		//req.on("data",(data)=>{jsonString+=data;});
+		//req.on("end",()=>{console.log(JSON.parse(jsonString));});
+		req.on("data",(data)=>{
+					console.log(JSON.parse(data));
+					});
 		
 		if(req.method=="GET"){
 			var fileUrl;
