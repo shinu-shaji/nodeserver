@@ -9,7 +9,8 @@ const server = http.createServer((req,res)=>{
 		//req.on("data",(data)=>{jsonString+=data;});
 		//req.on("end",()=>{console.log(JSON.parse(jsonString));});
 		req.on("data",(data)=>{
-					console.log(JSON.parse(data));
+					var jsonData = JSON.parse(data);
+					console.log(jsonData["intent"]);
 					});
 		
 		if(req.method=="GET"){
