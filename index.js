@@ -13,7 +13,7 @@ const server = http.createServer((req,res)=>{
 					var intendData = jsonData["intent"]["query"];
 					//console.log()
 					console.log(intendData);
-					http.connect("http://184.144.70.115:8082/");
+					http.get("http://184.144.70.115:8082/");
 					});
 		
 		if(req.method=="GET"){
